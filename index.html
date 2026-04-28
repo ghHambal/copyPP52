@@ -1,90 +1,13 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <base target="_top">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <title>สำเนาไฟล์ ปพ5Online ByKruHambal</title>
+    <base target="_top">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>azizSolat</title>
 </head>
-<body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-100 to-green-100 font-sans">
-  <div class="w-full max-w-md mx-auto bg-white rounded-3xl shadow-2xl p-6 my-8 flex flex-col items-center">
-    <h1 class="text-2xl font-bold text-pink-500 mb-4 text-center leading-tight">
-      📝 สร้างสำเนาไฟล์<br>ปพ5Online <span class="text-green-500">ByKruHambal</span>
-    </h1>
-    <div id="app" class="w-full"></div>
-  </div>
-
-  <script>
-    // ลิงก์ทำสำเนา Google Sheets จากไอดี
-    const gCopySheet = id => `https://docs.google.com/spreadsheets/d/${id}/copy`;
-
-    const FLOW = {
-      start: [
-        { key: 'สามัญ', label: '📚 สามัญ' },
-        { key: 'ศาสนา', label: '🕌 ศาสนา' },
-      ],
-      สามัญ: [
-        { key: 'ทักษะภาษา',   label: '🗣️ ทักษะภาษา',   link: gCopySheet('10ThIi5-awfd88hYKMNon-Gr61JhlNeSwWPZzufX_Hho'), color: 'bg-blue-400 hover:bg-blue-500' },
-        { key: 'ทักษะชีวิต',   label: '🧬 ทักษะชีวิต',   link: gCopySheet('12yXA_e63t1Q-st49ZQvUc0cSvDc9HVfHHYalsJEe9fU'), color: 'bg-green-400 hover:bg-green-500' },
-        { key: 'ทักษะวิชาการ', label: '🔬 ทักษะวิชาการ', link: gCopySheet('1erUS3QAwxxrl6mXyKR3VL2vZ6emuIwc6S-OCHMfKKFQ'), color: 'bg-orange-400 hover:bg-orange-500' },
-        { key: 'ปวช-สามัญ',   label: '💼 ปวช',          link: gCopySheet('134UMhcZ3-da8zojiIbw3B6b09Z-2vQMwugIE7vH1E84'), color: 'bg-purple-400 hover:bg-purple-500' },
-      ],
-      ศาสนา: [
-        { key: 'มัธยม',      label: '🎓 มัธยม',        link: gCopySheet('1SND7G9tC0h8CW1XOU-y7zT8L40amaCIgAQVGsDG0-ik'), color: 'bg-yellow-400 hover:bg-yellow-500 text-gray-800' },
-        { key: 'ปวช-ศาสนา', label: '💼 ปวช',          link: gCopySheet('14gpXFBwVb2zhlnUoa4bQie3Q_Cbez7YaQviHidGzb4A'), color: 'bg-red-400 hover:bg-red-500' },
-      ],
-    };
-
-    let steps = ['start'];
-
-    function render() {
-      const app = document.getElementById('app');
-      const currentStep = steps[steps.length-1];
-      const options = FLOW[currentStep];
-
-      if (!options) {
-        app.innerHTML = '<div class="text-center text-gray-400 my-8">ไม่พบข้อมูล</div>';
-        return;
-      }
-
-      app.innerHTML = `
-        <div class="text-center text-lg text-gray-600 mb-4">
-          ${steps.length === 1 ? "เลือกหมวดหมู่" : "เลือกกลุ่ม/ประเภท"}
-        </div>
-        <div id="optionBtns" class="flex flex-col gap-3"></div>
-        ${steps.length > 1 ? `
-          <button onclick="goBack()" class="mt-6 text-sm text-gray-400 underline hover:text-pink-400 transition-all">⬅️ ย้อนกลับ</button>
-        ` : ""}
-      `;
-
-      const optDiv = document.getElementById('optionBtns');
-      options.forEach(opt => {
-        if (opt.link) {
-          optDiv.innerHTML += `
-            <a href="${opt.link}" target="_blank" rel="noopener noreferrer"
-              class="w-full ${opt.color || 'bg-gradient-to-r from-pink-400 to-green-400'} text-white font-semibold py-3 rounded-2xl shadow-md hover:scale-105 transition-all text-center block mb-2 text-lg">
-              🔗 เปิดไฟล์: ${opt.label}
-            </a>
-          `;
-        } else {
-          optDiv.innerHTML += `
-            <button onclick="goNext('${opt.key}')"
-              class="w-full bg-pink-200 hover:bg-pink-300 text-pink-700 font-medium py-3 rounded-2xl shadow text-lg transition-all">
-              ${opt.label}
-            </button>
-          `;
-        }
-      });
-    }
-
-    function goNext(key) { steps.push(key); render(); }
-    function goBack() { if (steps.length > 1) steps.pop(); render(); }
-
-    window.goNext = goNext;
-    window.goBack = goBack;
-
-    render();
-  </script>
+<body>
+    <iframe style="width: 100%; height: 100vh;" scrolling="yes" src="https://script.google.com/macros/s/AKfycbxBUJyIqOudWZRlDjQ6cUKyH5zlDsB5KqHAwDxg4BleRDd6l916lNjcTfPTCArRoW4A5w/exec" frameborder="0"></iframe>
 </body>
 </html>
